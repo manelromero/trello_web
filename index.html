@@ -4,28 +4,49 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Trello Web</title>
 
-        <script src="vendor/vue/vue.min.js"></script>
-        <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <link href="/vendor/semantic_ui/semantic.min.css">
+        <link href="/vendor/semantic_ui/icons.woff2">
+
+        <script src="/vendor/jquery/jquery.min.js"></script>
+        <script src="/vendor/semantic_ui/semantic.min.js"></script>
+        <script src="/vendor/vue/vue.min.js"></script>
         <script src="https://api.trello.com/1/client.js?key=e54bc33d7d3002aca08a3973424cae72"></script>
     </head>
     <body>
-        <ul id="blog">
-            <li v-for="card in cards">
-                <div><img :src="card.attachments[0].url"></div>
-                <div>Title: {{card.name}}</div>
-                <div>Content: {{card.desc}}</div>
-            </li>
-        </ul>
+        <h1 class="ui header">First header</h1>
 
-        <script src="js/infrastructure/bus.js"></script>
-        <script src="vendor/class/class.min.js"></script>
-        <script src="js/infrastructure/service.js"></script>
+        <div id="blog">
+            <div v-for="card in cards" class="ui card">
+                <div class="image">
+                    <img :src="card.attachments[0].url">
+                </div>
+                <div class="content">
+                    <a class="header">{{card.name}}</a>
+                    <div class="meta">
+                        <span class="date">Joined in 2013</span>
+                    </div>
+                    <div class="description">
+                        {{card.desc}}
+                    </div>
+                </div>
+                <div class="extra content">
+                    <a>
+                    <i class="user icon"></i>
+                    22 Friends
+                    </a>
+                </div>
+            </div>
+        </div>
 
-        <script src="js/services/trello.js"></script>
-        <script src="js/services/vue.js"></script>
+        <script src="/js/infrastructure/bus.js"></script>
+        <script src="/vendor/class/class.min.js"></script>
+        <script src="/js/infrastructure/service.js"></script>
 
-        <script src="js/pages/home.js"></script>
+        <script src="/js/services/trello.js"></script>
+        <script src="/js/services/vue.js"></script>
 
-        <script src="js/home.js"></script>
+        <script src="/js/pages/home.js"></script>
+
+        <script src="/js/home.js"></script>
     </body>
 </html>
